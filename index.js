@@ -6,6 +6,9 @@ const inquirer = require("inquirer");
 // Limits the word array to only five letter words
 const fiveLetterWords = wordList.filter(w => !!w.match(/^.{5}$/));
 
+// A line for pretty formatting
+const line = "----------------------------------";
+
 // Initialize some variables
 let thisWord;
 let guessesRemaining = 0;
@@ -13,7 +16,9 @@ let lettersGuessed = [];
 
 // Reset some variables, get a new word, start the letter guessing process
 function startGame() {
-
+    
+    console.log(line);
+    
     lettersGuessed = [];
     guessesRemaining = 10;
 
@@ -66,20 +71,21 @@ function letterGuess() {
 
                 // If you're out of guesses and haven't completed the word, you lose!
                 if (guessesRemaining === 0 && thisWord.display().includes("_")) {
-                    console.log("Sorry! You lose! Loser!");
-                    console.log("The word was: " + thisWordString);
+                    console.log("\nSorry! You lose! Loser!");
+                    console.log("The word was: " + thisWordString + "\n");
                     playAgain();
 
                 // If you finished the word, you win!
                 } else if (!thisWord.display().includes("_")) {
-                    console.log("You win! Awesome!");
-                    console.log("The word was: " + thisWordString);
+                    console.log("\nYou win! Awesome!");
+                    console.log("The word was: " + thisWordString + "\n");
                     playAgain();
 
                 // If you haven't won or lost, keep going
                 } else {
-                    console.log("Guesses remaining: " + guessesRemaining);
-                    console.log(thisWord.display());
+                    console.log("Guesses remaining: " + guessesRemaining + "\n");
+                    console.log(thisWord.display() + "\n");
+                    console.log(line);
                     letterGuess();
                 };
 
