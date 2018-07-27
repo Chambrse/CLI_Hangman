@@ -11,5 +11,5 @@ and run node hangman.js to play!
 
 
 ## Gif Tour
-This gif does a playthrough of the game with a test case.
+This gif does a playthrough of the game with a test case.  
 <img src="Hangman_Demo.gif" height="600"/>
