@@ -22,10 +22,7 @@ function startGame() {
     lettersGuessed = [];
     guessesRemaining = 10;
 
-/*     thisWordString = fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
- */
-
-    thisWordString = "teststring";   
+    thisWordString = fiveLetterWords[Math.floor(Math.random() * fiveLetterWords.length)];
 
     thisWord = new Word(thisWordString);
 
